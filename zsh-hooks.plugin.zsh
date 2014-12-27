@@ -100,16 +100,24 @@ hooks-define-hook(){
   typeset -ag "$1"
 }
 
-hooks-define-hook zle_line_init_hook
-zle-line-init(){
-  ZSH_CUR_KEYMAP=$KEYMAP
-  hooks-run-hook zle_line_init_hook
+-hooks-define-zle-hook(){
+    local hname
+    hname=$(echo $1 | tr '-' '_')
+    eval "
+        hooks-define-hook ${hname}_hook
+        ${1}(){
+            ZSH_CUR_KEYMAP=\$KEYMAP
+            hooks-run-hook ${hname}_hook
+        }
+        zle -N ${1}
+        "
 }
-zle -N zle-line-init
 
-hooks-define-hook zle_keymap_select_hook
-zle-keymap-select(){
-  ZSH_CUR_KEYMAP=$KEYMAP
-  hooks-run-hook zle_keymap_select_hook
-}
-zle -N zle-keymap-select
+-hooks-define-zle-hook zle-isearch-exit
+-hooks-define-zle-hook zle-isearch-update
+-hooks-define-zle-hook zle-line-init
+-hooks-define-zle-hook zle-line-finish
+-hooks-define-zle-hook zle-history-line-set
+-hooks-define-zle-hook zle-keymap-select
+-hooks-define-zle-hook zle-keymap-select
+
