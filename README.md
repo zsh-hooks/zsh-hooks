@@ -1,9 +1,9 @@
 Install
 -------
 
-Use [antigen](https://github.com/zsh-users/antigen) or [antigen-hs](https://github.com/Tarrasch/antigen-hs).  Here is how to do it with antigen:
+Use [zgen](https://github.com/tarjoilija/zgen) or antigen.  Here is how to do it with zgen:
 
-    antigen bundle willghatch/zsh-hooks
+    zgen load willghatch/zsh-hooks
 
 Usage
 -----
