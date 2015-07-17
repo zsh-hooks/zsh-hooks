@@ -25,7 +25,7 @@ to be a function that simply runs a hook.  So this plugin provides:
 
 - zle_line_init_hook - these functions run on line init!
 - zle_keymap_select_hook - these functions run when you switch your keymap!
-- similar to the previous two, all of the other special functions documented [here](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Special-Widgets)
+- similar to the previous two, all of the other special functions documented [here](http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Special-Widgets), except the history one, due to a bug.
 - $ZSH_CUR_KEYMAP - this variable is set on line init/keymap change!
 
 Why?

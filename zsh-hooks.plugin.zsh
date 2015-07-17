@@ -117,7 +117,11 @@ hooks-define-hook(){
 -hooks-define-zle-hook zle-isearch-update
 -hooks-define-zle-hook zle-line-init
 -hooks-define-zle-hook zle-line-finish
--hooks-define-zle-hook zle-history-line-set
+# this one causes a double-free error for zaw using the ag source
+# because it does some funny stuff with the history.  Anyway,
+# since as far as I know nobody uses or wants to use this hook,
+# I'll comment it out until such a time as this issue is fixed...
+#-hooks-define-zle-hook zle-history-line-set
 -hooks-define-zle-hook zle-keymap-select
 -hooks-define-zle-hook zle-keymap-select
 
