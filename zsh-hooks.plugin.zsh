@@ -125,3 +125,6 @@ hooks-define-hook(){
 -hooks-define-zle-hook zle-keymap-select
 -hooks-define-zle-hook zle-keymap-select
 
+# load the official hooks as well
+autoload -U add-zsh-hook
+
