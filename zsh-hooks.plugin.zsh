@@ -91,7 +91,7 @@ hooks-add-hook(){
 }
 
 hooks-run-hook(){
-  for f in "${(P)1}"; do
+  for f in ${(P)1}; do
     $f
   done
 }
@@ -122,7 +122,6 @@ hooks-define-hook(){
 # since as far as I know nobody uses or wants to use this hook,
 # I'll comment it out until such a time as this issue is fixed...
 #-hooks-define-zle-hook zle-history-line-set
--hooks-define-zle-hook zle-keymap-select
 -hooks-define-zle-hook zle-keymap-select
 
 # load the official hooks as well
