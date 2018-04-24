@@ -92,7 +92,7 @@ hooks-add-hook(){
 
 hooks-run-hook(){
   for f in ${(P)1}; do
-    $f
+    $f ${@:2} # send given args to the func
   done
 }
 
