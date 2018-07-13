@@ -14,6 +14,13 @@ Usage
         # options: -d to remove from hook, -D to remove with pattern
         # everything else accepted by add-zsh-hook works... because it's the same
 
+As a more concrete example:
+
+    my-finish-function(){echo "zle line finished"}
+    hooks-add-hook zle_line_finish_hook my-finish-function
+
+Note how `_hook` is appended to the function name, and all `-` characters are replaced with `_`.
+
 What??
 ------
 
