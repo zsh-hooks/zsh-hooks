@@ -102,7 +102,7 @@ hooks-define-hook(){
 
 -hooks-define-zle-hook(){
     local hname
-    hname=$(echo $1 | tr '-' '_')
+    hname="${1//-/_}"  # substitute all `-` with `_`
     eval "
         hooks-define-hook ${hname}_hook
         ${1}(){
