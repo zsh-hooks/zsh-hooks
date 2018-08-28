@@ -8,7 +8,8 @@ Use [zgen](https://github.com/tarjoilija/zgen) or antigen.  Here is how to do it
 Usage
 -----
 
-    hooks-define-hook <hook_variable_name> # defines a new hook that can be added to
+    hooks-define-hook <hook_variable_name> # Defines a new hook that can be added to.
+                                           # Note that `_hook` is appended to the name!
     hooks-run-hook <hook_variable_name> # runs all functions added to the hook
     hooks-add-hook [ops] <hook_variable_name> <function> # adds function to hook
         # options: -d to remove from hook, -D to remove with pattern
@@ -20,6 +21,18 @@ As a more concrete example:
     hooks-add-hook zle_line_finish_hook my-finish-function
 
 Note how `_hook` is appended to the function name, and all `-` characters are replaced with `_`.
+
+To define custom hooks, do something like this:
+
+    hooks-define-hook myhook
+    myfunc(){
+      echo running myfunc
+    }
+    hooks-add-hook myhook_hook myfunc
+    # then in whatever function you want the hook to run:
+    hooks-run-hook myhook_hook
+
+Why is `_hook` appended to the name?  Because I clearly wasn't thinking straight when I made that API.
 
 What??
 ------
