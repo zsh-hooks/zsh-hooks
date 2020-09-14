@@ -91,6 +91,7 @@ hooks-add-hook(){
 }
 
 hooks-run-hook(){
+  local f
   for f in ${(P)1}; do
     $f ${@:2} # send given args to the func
   done
