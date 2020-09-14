@@ -20,30 +20,13 @@ hooks-add-hook(){
   integer del list help
 
   while getopts "dDhLUzk" opt; do
-    case $opt in
-      (d)
-      del=1
-      ;;
-
-      (D)
-      del=2
-      ;;
-
-      (h)
-      help=1
-      ;;
-
-      (L)
-      list=1
-      ;;
-
-      ([Uzk])
-      autoopts+=(-$opt)
-      ;;
-
-      (*)
-      return 1
-      ;;
+    case "$opt" in
+      (d) del=1 ;;
+      (D) del=2 ;;
+      (h) help=1 ;;
+      (L) list=1 ;;
+      ([Uzk]) autoopts+=("-$opt") ;;
+      (*) return 1 ;;
     esac
   done
   shift $(( OPTIND - 1 ))
