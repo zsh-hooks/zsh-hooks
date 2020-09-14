@@ -50,7 +50,7 @@ hooks-add-hook(){
 
   if (( list )); then
     if [[ -z "$1" ]]; then
-      echo 'what hook do you want listed?' 2>&1
+      printf '%s: What hook do you want listed?\n' "${funcstack[@]}" >&2
       return 1
     fi
     typeset -mp $@
