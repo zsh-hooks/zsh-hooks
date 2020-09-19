@@ -1,25 +1,6 @@
 ZSH Hooks
 =========
 
-Install
--------
-
-### [zinit](https://github.com/zdharma/zinit)
-
-    zinit load zsh-hooks/zsh-hooks
-
-### [zgen](https://github.com/tarjoilija/zgen)
-
-    zgen load zsh-hooks/zsh-hooks
-
-### [zplug](https://github.com/zplug/zplug)
-
-    zplug zsh-hooks/zsh-hooks
-
-### [antigen](https://github.com/zsh-users/antigen)
-
-    antigen bundle zsh-hooks/zsh-hooks
-
 Usage
 -----
 
@@ -81,3 +62,22 @@ Why?
 ----
 
 Plugin authors might want to use this functionality, but if they do it will conflict with what end-users do. This can solve that problem. Basically this is made to be a dependency for other plugins.
+
+Install
+-------
+
+#### [zinit](https://github.com/zdharma/zinit)
+
+    zinit load zsh-hooks/zsh-hooks
+
+#### [zgen](https://github.com/tarjoilija/zgen)
+
+    zgen load zsh-hooks/zsh-hooks
+
+#### [zplug](https://github.com/zplug/zplug)
+
+    zplug zsh-hooks/zsh-hooks
+
+#### [antigen](https://github.com/zsh-users/antigen)
+
+    antigen bundle zsh-hooks/zsh-hooks
