@@ -97,8 +97,11 @@ hooks-define-hook(){
         "
 }
 
+# Add the special widgets defined at:
+# https://zsh.sourceforge.io/Doc/Release/Zsh-Line-Editor.html#Special-Widgets
 -hooks-define-zle-hook zle-isearch-exit
 -hooks-define-zle-hook zle-isearch-update
+-hooks-define-zle-hook zle-line-pre-redraw
 -hooks-define-zle-hook zle-line-init
 -hooks-define-zle-hook zle-line-finish
 # this one causes a double-free error for zaw using the ag source
